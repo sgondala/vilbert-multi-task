@@ -320,15 +320,10 @@ class HybridLoader:
 class CiderDataset(Dataset):
     def __init__(
         self,
-        task: str,
-        dataroot: str,
         captions_path: str,
-        split: str,
         images_path: str,
         cider_values_path: str,
         tokenizer: BertTokenizer,
-        bert_model,
-        clean_datasets,
         padding_index: int = 0,
         max_seq_length: int = 20,
         max_region_num: int = 37,
@@ -344,7 +339,6 @@ class CiderDataset(Dataset):
 
         self._tokenizer = tokenizer
         self.num_labels = 1
-        self._split = split
         
         self._padding_index = padding_index
         self._max_region_num = max_region_num
